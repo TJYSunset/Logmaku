@@ -2,8 +2,15 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Logmaku"
-             StartupUri="MainWindow.xaml">
+             xmlns:tray="clr-namespace:Hardcodet.Wpf.TaskbarNotification;assembly=Hardcodet.Wpf.TaskbarNotification"
+             xmlns:math="http://hexinnovation.com/math"
+             xmlns:converters="clr-namespace:Logmaku.Converters"
+             MainWindow="{x:Null}"
+             ShutdownMode="OnExplicitShutdown"
+             Startup="Main">
     <Application.Resources>
-         
+        <CommandBinding x:Key="ExitCommand" CanExecute="CommandBinding_AlwaysCanExecute" Executed="CommandBinding_Exit" />
+        <tray:TaskbarIcon x:Key="TaskbarIcon" />
+        <converters:NegativeConverter x:Key="NegativeConverter" />
     </Application.Resources>
 </Application>
